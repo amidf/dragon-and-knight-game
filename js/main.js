@@ -1,3 +1,4 @@
+// This function returns string with first letter in uppercase/
 function toCorrectString(string) {
 
     let correctString = string.toLocaleLowerCase();
@@ -12,6 +13,7 @@ function toCorrectString(string) {
 
 }
 
+// Constuctor for any creature.
 function Creature(classCreature, name, health, varHealth, damage) {
 
     this.class = classCreature;
@@ -22,6 +24,7 @@ function Creature(classCreature, name, health, varHealth, damage) {
 
 }
 
+// Object game with main properties of the game.
 const game = {
 
     allKnights : [],
@@ -29,6 +32,7 @@ const game = {
 
 };
 
+// Object test contains methods for test app, such as printing all creatures in console.
 const test = {
 
     printProps : () => {
@@ -61,6 +65,7 @@ const test = {
 
 };
 
+// This object contains all Nodes from .modalWindow.
 const modalWindowUI = {
 
     $listClasses : $('.modalWindow select'),
@@ -72,8 +77,10 @@ const modalWindowUI = {
 
 };
 
+// This object contains main functions for check correct inputs and check beginning game.
 const modalWindow = {
 
+    // Check can player begin the game or not. To begin he must create at least one creature of knight class and dragon class.
     checkCreatures : () => {
 
         let knight = game.allKnights.length > 0;
@@ -86,6 +93,7 @@ const modalWindow = {
         }
 
     },
+    // Check all inputs. If one of them is empty function return false.
     checkInputs : () => {
         const allInputs = $('.modalWindow input');
         let check = true;
@@ -105,6 +113,7 @@ const modalWindow = {
         }
 
     },
+    // Just clear inputs after creating creature.
     clearInputs : () => {
 
         const allInputs = $('.modalWindow input');
@@ -116,6 +125,7 @@ const modalWindow = {
         }
 
     },
+    // Make .beginBtn is allowed.
     offDisabled : () => {
 
         modalWindowUI.$beginBtn.removeAttr('disabled');
@@ -124,6 +134,7 @@ const modalWindow = {
 
 };
 
+// Event listener for .createBtn which creates new creature.
 modalWindowUI.$createBtn.on('click', () => {
 
     let classCreature = modalWindowUI.$listClasses.val();
