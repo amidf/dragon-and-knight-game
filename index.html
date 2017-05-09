@@ -2,45 +2,36 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Test JavaScript Arrays Methods</title>
-        <link rel="stylesheet" href="style.css">
+        <title>Knight and Dragon Game</title>
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-
-        <div class="wrapper">
-            <div class="card knight-card">
-                <ul class="details">
-
-                </ul>
-                <p class="title-bar">Knight's Health</p>
-                <div class="health-bar knight">
-                    <div class="health-line"></div>
-                    <span class='bar-text'></span>
-                </div>
-            </div>
-
-            <div class="btns">
-                <button class="beginBtn" type="button">Fight!</button>
-                <button class="endBtn" type="button">Restart</button>
-            </div>
-
-
-            <div class="card dragon-card">
-                <ul class="details">
-
-                </ul>
-                <p class="title-bar">Dragon's Health</p>
-                <div class="health-bar dragon">
-                    <div class="health-line"></div>
-                    <span class="bar-text"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="console">
-
-        </div>
         
-        <script src="app.js"></script>
+        <div class="modalWindow">
+            <h2>Creating Characters</h2>
+            
+            <form action="#" onsubmit="return false;">
+                <label for="creature">Select class of creature:</label>
+                <select name="creature" id="creature">
+                    <option value="knight">Knight</option>
+                    <option value="dragon">Dragon</option>
+                </select>
+                
+                <label for="nameCreature">Name:</label>
+                <input type="text" id="nameCreature" name="nameCreature">
+                
+                <label for="healthCreature">Health:</label>
+                <input type="text" id="healthCreature" name="healthCreature">
+                
+                <label for="damageCreature">Damage:</label>
+                <input type="text" id="damageCreature" name="damageCreature">
+                
+                <button type="button" class="createBtn">Create</button>
+                <button type="submit" class="beginBtn" disabled>Begin Game</button>   
+            </form>
+        </div>
+       
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>
